@@ -1,3 +1,15 @@
+import socket
+import getpass
+import platform
+
+# Información básica del sistema
+usuario = getpass.getuser()
+hostname = socket.gethostname()
+sistema = platform.system()
+version = platform.version()
+arquitectura = platform.machine()
+procesador = platform.processor()
+
 print("===================================")
 print("        HOLA MUNDO PYTHON")
 print("===================================")
