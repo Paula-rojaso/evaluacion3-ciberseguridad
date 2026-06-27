@@ -27,19 +27,19 @@ pipeline {
                 echo 'Iniciando el despliegue interno...'
                 sh '''
                     echo "Creando el directorio de despliegue si no existe..."
-                    mkdir -p /var/jenkins_home/deploy
+                    mkdir -p deploy
 
                     echo "Limpiando despliegues anteriores..."
-                    rm -rf /var/jenkins_home/deploy/*
+                    rm -rf deploy/*
 
                     echo "Copiando app.py al directorio de destino..."
-                    cp app.py /var/jenkins_home/deploy/
+                    cp app.py deploy/
 
                     echo "Verificando archivo desplegado:"
-                    ls -l /var/jenkins_home/deploy/
+                    ls -l deploy/
 
                     echo "Ejecutando aplicación desde el despliegue:"
-                    python3 /var/jenkins_home/deploy/app.py
+                    python3 deploy/app.py
                 '''
             }
         }
